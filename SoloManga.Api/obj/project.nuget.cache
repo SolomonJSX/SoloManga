@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "EqzdyUd+pxc=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\SoloManga.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Janserik\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.6\\microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
+    "C:\\Users\\Janserik\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}
