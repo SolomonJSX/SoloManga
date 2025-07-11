@@ -11,6 +11,7 @@ public class Manga
     public string? Author { get; set; }
     public string? Artist { get; set; }
     public DateTime ReleaseDate { get; set; }
+    public DateTime LastUpdated { get; set; } = DateTime.Now;
     public MangaStatus Status { get; set; }
     public int ChaptersCount { get; set; }
     public string? CoverImageUrl { get; set; }
