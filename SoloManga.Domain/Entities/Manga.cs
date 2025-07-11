@@ -1,4 +1,7 @@
-﻿namespace SoloManga.Domain.Entities;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace SoloManga.Domain.Entities;
+
 
 public class Manga
 {
@@ -11,9 +14,10 @@ public class Manga
     public MangaStatus Status { get; set; }
     public int ChaptersCount { get; set; }
     public string? CoverImageUrl { get; set; }
-    public List<Genre> Genres { get; set; } = new List<Genre>();
     public List<Chapter> Chapters { get; set; } = new List<Chapter>();
-    public decimal Rating { get; set; }
+    
+    [Range(0, 10)]
+    public int Rating { get; set; }
 }
 
 public enum MangaStatus

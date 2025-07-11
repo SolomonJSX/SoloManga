@@ -11,6 +11,6 @@ public class Chapter
     public int ChapterNumber { get; set; }
     public int? VolumeNumber { get; set; }
     public DateTime ReleaseDate { get; set; }
-    public int PagesCount { get; set; }
+    public int PageCount { get; set; }
     public List<Page> Pages { get; set; } = new();
 }
