@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoloManga.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6ae39b19667f9d86c864f26a49ed1dca888f495")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b527302fba37ead26c014e602bc971b6d309f960")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoloManga.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoloManga.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

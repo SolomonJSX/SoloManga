@@ -297,6 +297,19 @@
           }
         }
       },
+      "SoloManga.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v9.0",
+        "dependencies": {
+          "SoloManga.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SoloManga.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SoloManga.Application.dll": {}
+        }
+      },
       "SoloManga.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
@@ -751,6 +764,11 @@
         "postgresql.png"
       ]
     },
+    "SoloManga.Application/1.0.0": {
+      "type": "project",
+      "path": "../SoloManga.Application/SoloManga.Application.csproj",
+      "msbuildProject": "../SoloManga.Application/SoloManga.Application.csproj"
+    },
     "SoloManga.Domain/1.0.0": {
       "type": "project",
       "path": "../SoloManga.Domain/SoloManga.Domain.csproj",
@@ -761,6 +779,7 @@
     "net9.0": [
       "Microsoft.AspNetCore.OpenApi >= 9.0.6",
       "Npgsql.EntityFrameworkCore.PostgreSQL >= 9.0.4",
+      "SoloManga.Application >= 1.0.0",
       "SoloManga.Domain >= 1.0.0"
     ]
   },
@@ -797,6 +816,9 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
+            "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj": {
+              "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj"
+            },
             "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj": {
               "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj"
             }

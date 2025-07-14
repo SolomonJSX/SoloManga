@@ -1296,6 +1296,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.OpenApi": "9.0.6",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "SoloManga.Application": "1.0.0",
           "SoloManga.Domain": "1.0.0"
         },
         "compile": {

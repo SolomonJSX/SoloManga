@@ -23,4 +23,8 @@
       <ProjectReference Include="..\SoloManga.Infrastructure\SoloManga.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Controllers\" />
+    </ItemGroup>
+
 </Project>
