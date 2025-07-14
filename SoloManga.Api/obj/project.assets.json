@@ -4099,7 +4099,7 @@
       "code": "NU1603",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "SoloManga.Api зависит от Swashbuckle.AspNetCore (>= 6.5.1), но версия Swashbuckle.AspNetCore 6.5.1 не найдена. Использовалась версия Swashbuckle.AspNetCore 6.6.1.",
+      "message": "SoloManga.Api depends on Swashbuckle.AspNetCore (>= 6.5.1) but Swashbuckle.AspNetCore 6.5.1 was not found. Swashbuckle.AspNetCore 6.6.1 was resolved instead.",
       "libraryId": "Swashbuckle.AspNetCore",
       "targetGraphs": [
         "net9.0"
@@ -4108,7 +4108,7 @@
     {
       "code": "NU1605",
       "level": "Error",
-      "message": "Предупреждение как ошибка: Обнаружено понижение версии пакета Microsoft.IdentityModel.Tokens с 8.0.1 на 6.24.0. Чтобы выбрать другую версию, создайте ссылку на пакет напрямую из проекта. \r\n SoloManga.Api -> Microsoft.AspNetCore.Authentication.JwtBearer 9.0.6 -> Microsoft.IdentityModel.Protocols.OpenIdConnect 8.0.1 -> Microsoft.IdentityModel.Protocols 8.0.1 -> Microsoft.IdentityModel.Tokens (>= 8.0.1) \r\n SoloManga.Api -> Microsoft.IdentityModel.Tokens (>= 6.24.0)",
+      "message": "Warning As Error: Detected package downgrade: Microsoft.IdentityModel.Tokens from 8.0.1 to 6.24.0. Reference the package directly from the project to select a different version. \r\n SoloManga.Api -> Microsoft.AspNetCore.Authentication.JwtBearer 9.0.6 -> Microsoft.IdentityModel.Protocols.OpenIdConnect 8.0.1 -> Microsoft.IdentityModel.Protocols 8.0.1 -> Microsoft.IdentityModel.Tokens (>= 8.0.1) \r\n SoloManga.Api -> Microsoft.IdentityModel.Tokens (>= 6.24.0)",
       "libraryId": "Microsoft.IdentityModel.Tokens",
       "targetGraphs": [
         "net9.0"
