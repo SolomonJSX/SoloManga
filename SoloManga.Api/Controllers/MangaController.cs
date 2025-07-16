@@ -3,7 +3,7 @@
 namespace SoloManga.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/manga")]
 public class MangaController : ControllerBase
 {
     
