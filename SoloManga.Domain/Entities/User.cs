@@ -1,10 +1,13 @@
 ﻿
 
+using System.ComponentModel.DataAnnotations;
+
 namespace SoloManga.Domain.Entities;
 
 public class User
 {
-    public string DisplayName { get; set; } = "Чан";
+    public int Id { get; set; }
+    public string Username { get; set; } = "Чан";
     public string? AvatarUrl { get; set; }
     public DateTime RegistrationDate { get; set; }
 
