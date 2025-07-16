@@ -10,18 +10,18 @@ public class AuthService(AppDbContext context, JwtService jwtService) : IAuthSer
 {
     public async Task<string> Register(RegisterDto dto)
     {
-        if (await context.Users.AnyAsync(u => u.Email == dto.Email))
+        if (await context.Users.AsNoTracking().AnyAsync(u => u.Email == dto.Email))
             throw new Exception("Email is already registered");
 
         User user;
 
-        if (!context.Users.Any())
+        if (!context.Users.AsNoTracking().Any())
         {
             user = new User()
             {
                 Email = dto.Email,
                 Username = dto.Username,
-                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password),
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password, workFactor: 8),
                 Role = "Admin"
             };
         }
@@ -46,7 +46,7 @@ public class AuthService(AppDbContext context, JwtService jwtService) : IAuthSer
 
     public async Task<string> Login(LoginDto dto)
     {
-        var user = await context.Users.FirstOrDefaultAsync(u => u.Username == dto.Login || u.Email == dto.Login);
+        var user = await context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Username == dto.Login || u.Email == dto.Login);
         
         if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
             throw new Exception("Invalid login or password");

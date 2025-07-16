@@ -24,7 +24,7 @@ public class JwtService(IConfiguration config)
             issuer: config["Jwt:Issuer"],
             audience: config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.Now.AddMinutes(double.Parse(config["Jwt:ExpireMinutes"]!)),
+            expires: DateTime.Now.AddMinutes(double.Parse(config["Jwt:ExpiresInMinutes"]!)),
             signingCredentials: creds
         );
         

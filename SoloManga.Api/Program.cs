@@ -2,6 +2,7 @@ using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Scalar.AspNetCore;
 using SoloManga.Application.Interfaces;
 using SoloManga.Infrastructure.Persistence;
 using SoloManga.Infrastructure.Services;
@@ -53,8 +54,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.MapScalarApiReference();
 }
 
+app.MapControllers();
 
 app.UseHttpsRedirection();
 
