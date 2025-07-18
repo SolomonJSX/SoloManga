@@ -3,6 +3,8 @@ using System.Security.Claims;
 using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SoloManga.Application.DTOs;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SoloManga.Infrastructure.Services;
 
