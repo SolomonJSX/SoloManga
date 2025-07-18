@@ -1,43 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\SoloManga.Api.csproj": {}
+    "/home/janserik/RiderProjects/SoloManga/SoloManga.Api/SoloManga.Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\SoloManga.Api.csproj": {
+    "/home/janserik/RiderProjects/SoloManga/SoloManga.Api/SoloManga.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\SoloManga.Api.csproj",
+        "projectUniqueName": "/home/janserik/RiderProjects/SoloManga/SoloManga.Api/SoloManga.Api.csproj",
         "projectName": "SoloManga.Api",
-        "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\SoloManga.Api.csproj",
-        "packagesPath": "C:\\Users\\Janserik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Api\\obj\\",
+        "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Api/SoloManga.Api.csproj",
+        "packagesPath": "/home/janserik/.nuget/packages/",
+        "outputPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Api/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Janserik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/janserik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj": {
-                "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj"
+              "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj": {
+                "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj"
               },
-              "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\SoloManga.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\SoloManga.Infrastructure.csproj"
+              "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/SoloManga.Infrastructure.csproj": {
+                "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/SoloManga.Infrastructure.csproj"
               }
             }
           }
@@ -52,7 +45,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -118,41 +111,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj": {
+    "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj",
+        "projectUniqueName": "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj",
         "projectName": "SoloManga.Application",
-        "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj",
-        "packagesPath": "C:\\Users\\Janserik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\obj\\",
+        "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj",
+        "packagesPath": "/home/janserik/.nuget/packages/",
+        "outputPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Janserik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/janserik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj": {
-                "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj"
+              "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj": {
+                "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj"
               }
             }
           }
@@ -167,7 +153,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -188,33 +174,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj": {
+    "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj",
+        "projectUniqueName": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj",
         "projectName": "SoloManga.Domain",
-        "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj",
-        "packagesPath": "C:\\Users\\Janserik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\obj\\",
+        "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj",
+        "packagesPath": "/home/janserik/.nuget/packages/",
+        "outputPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Janserik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/janserik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -233,7 +212,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -254,44 +233,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\SoloManga.Infrastructure.csproj": {
+    "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/SoloManga.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\SoloManga.Infrastructure.csproj",
+        "projectUniqueName": "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/SoloManga.Infrastructure.csproj",
         "projectName": "SoloManga.Infrastructure",
-        "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\SoloManga.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Janserik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Infrastructure\\obj\\",
+        "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/SoloManga.Infrastructure.csproj",
+        "packagesPath": "/home/janserik/.nuget/packages/",
+        "outputPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Janserik\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/janserik/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj": {
-                "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Application\\SoloManga.Application.csproj"
+              "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj": {
+                "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Application/SoloManga.Application.csproj"
               },
-              "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj": {
-                "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj"
+              "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj": {
+                "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj"
               }
             }
           }
@@ -306,7 +278,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -345,7 +317,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

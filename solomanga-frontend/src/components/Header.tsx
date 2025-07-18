@@ -44,7 +44,7 @@ const Header = () => {
             {/* Overlay */}
             <div className={clsx('z-30 fixed inset-0 bg-black/50 transition-opacity duration-300',
                 isOpen ? "opacity-100 visible" : "opacity-100 invisible"
-                )} />
+            )} />
 
             {/* Mobile Sidebar — теперь не перекрывает header */}
             {isOpen && (
