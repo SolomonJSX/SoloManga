@@ -8,12 +8,9 @@ import {useState} from "react";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/ui/form";
 import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
-import axios from "axios";
-import AuthResponseType from "@/types/authResponseType";
-import {AUTH_LOGIN_URL} from "@/repository/hosts";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {useAuth} from "@/stores/useAuth";
+import {useLogin} from "@/hooks/useLogin";
 
 export default function LoginPage() {
     const form = useForm<LoginForm>({
@@ -26,24 +23,24 @@ export default function LoginPage() {
 
     const router = useRouter();
 
-    const { setUser } = useAuth()
+    const login = useLogin()
 
     const [error, setError] = useState("")
 
     const onSubmit = async (values: LoginForm) => {
-        try {
-            const response = await axios.post<AuthResponseType>(AUTH_LOGIN_URL, values)
-            localStorage.setItem("token", response.data.token)
-            setUser(response.data.token)
-            router.push("/")
-        } catch (error: any) {
-            const message =
-                error.response?.data ??           // из тела ответа
-                error.response?.statusText ??     // или статус
-                "Произошла ошибка регистрации"
-
-            setError(message)
-        }
+        setError("")
+        login.mutate(values, {
+            onSuccess: () => {
+                router.push("/")
+            },
+            onError: (error: any) => {
+                const message =
+                    error.response?.data?.message ??
+                    error.response?.statusText ??
+                    "Произошла ошибка входа"
+                setError(message)
+            }
+        })
     }
 
     return (

@@ -4,8 +4,9 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {CircleUserRound, LogOut, Menu, X} from 'lucide-react';
 import clsx from 'clsx';
-import {useAuth} from "@/stores/useAuth";
 import {useRouter} from "next/navigation";
+import {useUser} from "@/hooks/useUser";
+import {useLogout} from "@/hooks/useLogout";
 
 const Header = () => {
     const menu = [
@@ -13,7 +14,8 @@ const Header = () => {
         { href: '/manga', label: 'Манга' },
     ];
 
-    const { user, logout } = useAuth()
+    const { data: userData } = useUser()
+    const logout = useLogout()
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -38,14 +40,14 @@ const Header = () => {
 
 
                     {
-                        !user ? (
+                        !userData ? (
                             <div className="hidden md:block">
                                 <Link href="/auth/login">Войти</Link>
                             </div>
                         ) : (
                             <div className={"hidden cursor-pointer md:flex items-center gap-5"}>
                                 <CircleUserRound size={24} onClick={() => router.push("/profile")} />
-                                <LogOut size={24} onClick={() => logout()} />
+                                <LogOut size={24} onClick={logout} />
                             </div>
                         )
                     }

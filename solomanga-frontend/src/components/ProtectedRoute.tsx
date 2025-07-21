@@ -1,38 +1,29 @@
-"use client"
+'use client'
 
-import React, {useEffect} from 'react';
-import {useAuth} from "@/stores/useAuth";
-import {useRouter} from "next/navigation";
+import { useRouter } from 'next/navigation'
+import { useEffect } from 'react'
+import { useUser } from '@/hooks/useUser'
 
 interface IProps {
-    children: React.ReactNode;
+    children: React.ReactNode
 }
 
 const ProtectedRoute = ({ children }: IProps) => {
-    const {user, setUser} = useAuth()
-    const router = useRouter();
+    const router = useRouter()
+    const { data: user, isLoading, isError } = useUser()
 
     useEffect(() => {
-        const token = localStorage.getItem("token");
-        if (!token) {
-            router.push("/auth/login");
-            return;
+        const token = localStorage.getItem('token')
+        if (!token || isError) {
+            router.push('/auth/login')
         }
+    }, [isError])
 
-        if (!user) {
-            setUser(token)
-        }
-    }, [user])
+    if (isLoading) return null // или спиннер
 
     if (!user) return null
 
-    console.log(user)
+    return <>{children}</>
+}
 
-    return (
-        <>
-            {children}
-        </>
-    );
-};
-
-export default ProtectedRoute;
+export default ProtectedRoute

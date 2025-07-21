@@ -48,35 +48,4 @@ public class AuthController(IAuthService authService, AppDbContext context) : Co
             return BadRequest(e.Message);
         }
     }
-
-    [HttpGet("me")]
-    public async Task<ActionResult<UserViewDto>> GetCurrentUser()
-    {
-        try
-        {
-            var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            
-            if (string.IsNullOrEmpty(userId)) throw new UnauthorizedAccessException();
-            
-            var currentUser = await context.Users
-                .AsNoTracking().FirstOrDefaultAsync(u => u.Id == int.Parse(userId));
-            
-            if (currentUser == null) throw new UnauthorizedAccessException();
-            
-            return Ok(new UserViewDto()
-            {
-                Id = currentUser.Id,
-                Email = currentUser.Email,
-                AvatarUrl = currentUser.AvatarUrl,
-                RegistrationDate = currentUser.RegistrationDate,
-                Role = currentUser.Role,
-                Username = currentUser.Username
-            });
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            return BadRequest(e.Message);
-        }
-    }
 }

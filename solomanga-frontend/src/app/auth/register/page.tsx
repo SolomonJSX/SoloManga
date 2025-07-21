@@ -12,7 +12,7 @@ import {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
 import Link from "next/link";
 import {useRouter} from "next/navigation";
-import {useAuth} from "@/stores/useAuth";
+import {useRegister} from "@/hooks/useRegister";
 
 const RegisterPage = () => {
     const form = useForm<RegisterForm>({
@@ -26,24 +26,24 @@ const RegisterPage = () => {
 
     const router = useRouter();
 
+    const register = useRegister()
+
     const [error, setError] = useState("")
 
-    const { setUser } = useAuth()
-
     const onSubmit = async (values: RegisterForm) => {
-        try {
-            const response = await axios.post<AuthResponseType>(AUTH_REGISTER_URL, values)
-            localStorage.setItem("token", response.data.token)
-            setUser(response.data.token)
-            router.push("/")
-        } catch (error: any) {
-            const message =
-                error.response?.data ??           // из тела ответа
-                error.response?.statusText ??     // или статус
-                "Произошла ошибка регистрации"
-
-            setError(message)
-        }
+        setError("")
+        register.mutate(values, {
+            onSuccess: () => {
+                router.push("/")
+            },
+            onError: (error: any) => {
+                const message =
+                    error.response?.data?.message ??
+                    error.response?.statusText ??
+                    "Произошла ошибка входа"
+                setError(message)
+            }
+        })
     }
 
     return (
