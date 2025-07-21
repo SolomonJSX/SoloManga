@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SoloManga.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f132e42d923e6f73d17f0c6d578bd7dd1840a617")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91d9c0f0f3cc2ea0929509b720cd4c9c1645292c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SoloManga.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SoloManga.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

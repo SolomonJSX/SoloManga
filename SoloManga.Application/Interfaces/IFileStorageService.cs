@@ -4,5 +4,5 @@ namespace SoloManga.Application.Interfaces;
 
 public interface IFileStorageService
 {
-    Task<string> UploadCoverAsync(UploadCoverRequestDto request);
+    Task<string> UploadCoverAsync(UploadCoverRequestDto request, string pathName);
 }

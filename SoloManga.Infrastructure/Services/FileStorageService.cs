@@ -6,7 +6,7 @@ namespace SoloManga.Infrastructure.Services;
 
 public class FileStorageService(IWebHostEnvironment env) : IFileStorageService
 {
-    public async Task<string> UploadCoverAsync(UploadCoverRequestDto request)
+    public async Task<string> UploadCoverAsync(UploadCoverRequestDto request,string pathName)
     {
         var ext = Path.GetExtension(request.FileName);
         var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".bmp" };
@@ -16,13 +16,13 @@ public class FileStorageService(IWebHostEnvironment env) : IFileStorageService
         
         var fileName = $"{Guid.NewGuid()}{ext}";
         
-        var path = Path.Combine(env.ContentRootPath, "covers", fileName);
+        var path = Path.Combine(env.ContentRootPath, pathName, fileName);
         
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         
         await using var stream = new FileStream(path, FileMode.Create);
         await request.FileStream.CopyToAsync(stream);
         
-        return $"/covers/{fileName}";
+        return $"/{pathName}/{fileName}";
     }
 }

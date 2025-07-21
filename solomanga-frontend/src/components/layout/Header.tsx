@@ -2,8 +2,10 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import {CircleUserRound, LogOut, Menu, X} from 'lucide-react';
 import clsx from 'clsx';
+import {useAuth} from "@/stores/useAuth";
+import {useRouter} from "next/navigation";
 
 const Header = () => {
     const menu = [
@@ -11,7 +13,11 @@ const Header = () => {
         { href: '/manga', label: 'Манга' },
     ];
 
+    const { user, logout } = useAuth()
+
     const [isOpen, setIsOpen] = useState(false);
+
+    const router = useRouter();
 
     return (
         <>
@@ -20,7 +26,7 @@ const Header = () => {
                 <div className="container mx-auto flex justify-between items-center">
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex space-x-6 text-white font-medium items-center">
-                        <Link href="/public" className="font-bold text-xl">
+                        <Link href="/" className="font-bold text-xl">
                             SoloManga (LOGO)
                         </Link>
                         {menu.map((item, index) => (
@@ -30,14 +36,31 @@ const Header = () => {
                         ))}
                     </nav>
 
-                    <div className="hidden md:block">
-                        <Link href="/login">Войти</Link>
-                    </div>
+
+                    {
+                        !user ? (
+                            <div className="hidden md:block">
+                                <Link href="/auth/login">Войти</Link>
+                            </div>
+                        ) : (
+                            <div className={"hidden cursor-pointer md:flex items-center gap-5"}>
+                                <CircleUserRound size={24} onClick={() => router.push("/profile")} />
+                                <LogOut size={24} onClick={() => logout()} />
+                            </div>
+                        )
+                    }
+
+
 
                     {/* Mobile Menu Button */}
-                    <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-                        {isOpen ? <X size={24} /> : <Menu size={24} />}
-                    </button>
+                    <div className={"flex gap-2 md:hidden items-center"}>
+                        <button onClick={() => setIsOpen(!isOpen)}>
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </button>
+                        <Link href="/public" className="font-bold text-sm">
+                            SoloManga (LOGO)
+                        </Link>
+                    </div>
                 </div>
             </header>
 
@@ -64,8 +87,8 @@ const Header = () => {
                         </div>
                         <nav className="flex flex-col gap-4 p-4 text-lg">
                             <Link href="/" onClick={() => setIsOpen(false)}>Главная</Link>
-                            <Link href="/manga" onClick={() => setIsOpen(false)}>Манга</Link>
-                            <Link href="/login" onClick={() => setIsOpen(false)}>Войти</Link>
+                            {/*<Link href="/manga" onClick={() => setIsOpen(false)}>Манга</Link>*/}
+                            <Link href="/auth/login" onClick={() => setIsOpen(false)}>Войти</Link>
                         </nav>
                     </aside>
                 </div>

@@ -59,9 +59,6 @@ public class AuthController(IAuthService authService, AppDbContext context) : Co
             if (string.IsNullOrEmpty(userId)) throw new UnauthorizedAccessException();
             
             var currentUser = await context.Users
-                .Include(u => u.Bookmarks)
-                .Include(u => u.Comments)
-                .Include(u => u.Ratings)
                 .AsNoTracking().FirstOrDefaultAsync(u => u.Id == int.Parse(userId));
             
             if (currentUser == null) throw new UnauthorizedAccessException();
@@ -71,9 +68,6 @@ public class AuthController(IAuthService authService, AppDbContext context) : Co
                 Id = currentUser.Id,
                 Email = currentUser.Email,
                 AvatarUrl = currentUser.AvatarUrl,
-                Bookmarks = currentUser.Bookmarks,
-                Comments = currentUser.Comments,
-                Ratings = currentUser.Ratings,
                 RegistrationDate = currentUser.RegistrationDate,
                 Role = currentUser.Role,
                 Username = currentUser.Username
