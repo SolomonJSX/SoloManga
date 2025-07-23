@@ -4,5 +4,5 @@ namespace SoloManga.Application.Interfaces;
 
 public interface IUserService
 {
-    Task<string> ChangeAvatarAsync(int userId, UploadCoverRequestDto request);
+    Task<string> ChangeAvatarAsync(int userId, UploadCoverRequestDto file);
 }

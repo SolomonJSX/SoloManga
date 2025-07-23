@@ -31,7 +31,7 @@ export default function RootLayout({
         >
         <Providers>
             <Header/>
-            <main className={"container mx-auto py-4"}>
+            <main className={"container mx-auto"}>
 
                 {children}
 

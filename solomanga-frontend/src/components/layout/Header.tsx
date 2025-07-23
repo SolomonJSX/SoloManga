@@ -38,22 +38,6 @@ const Header = () => {
                         ))}
                     </nav>
 
-
-                    {
-                        !userData ? (
-                            <div className="hidden md:block">
-                                <Link href="/auth/login">Войти</Link>
-                            </div>
-                        ) : (
-                            <div className={"hidden cursor-pointer md:flex items-center gap-5"}>
-                                <CircleUserRound size={24} onClick={() => router.push("/profile")} />
-                                <LogOut size={24} onClick={logout} />
-                            </div>
-                        )
-                    }
-
-
-
                     {/* Mobile Menu Button */}
                     <div className={"flex gap-2 md:hidden items-center"}>
                         <button onClick={() => setIsOpen(!isOpen)}>
@@ -63,6 +47,28 @@ const Header = () => {
                             SoloManga (LOGO)
                         </Link>
                     </div>
+
+                    {
+                        !userData ? (
+                            <div className="block">
+                                <Link href="/auth/login">Войти</Link>
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-2 md:gap-4">
+                                <CircleUserRound
+                                    onClick={() => router.push("/profile")}
+                                    size={24}
+                                    className="cursor-pointer text-white hover:text-gray-300 transition"
+                                />
+                                <LogOut
+                                    onClick={() => logout()}
+                                    size={24}
+                                    className="cursor-pointer text-white hover:text-gray-300 transition"
+                                />
+                            </div>
+                        )
+                    }
+
                 </div>
             </header>
 

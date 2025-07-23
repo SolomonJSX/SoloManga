@@ -33,9 +33,9 @@ builder.Services.AddCors(options =>
 
 //ADD services
 builder.Services.AddScoped<IMangaService, MangaService>();
-builder.Services.AddScoped<IFileStorageService, FileStorageService>();
+builder.Services.AddScoped<FileStorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<UserService>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
@@ -68,6 +68,9 @@ if (app.Environment.IsDevelopment())
     app.MapScalarApiReference();
 }
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -76,8 +79,5 @@ app.UseCors("AllowFrontend");
 app.MapControllers();
 
 app.UseHttpsRedirection();
-
-app.UseDefaultFiles();
-app.UseStaticFiles();
 
 app.Run();

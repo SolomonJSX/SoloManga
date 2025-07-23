@@ -13,5 +13,7 @@ export function useLogout() {
 
         // ✅ Удаляем кэш
         queryClient.removeQueries({ queryKey: ["user"], exact: true })
+
+        router.push("/")
     }
 }

@@ -10,6 +10,7 @@ public class User
     public string PasswordHash { get; set; } = null!;
     public string Role { get; set; } = "User";
     public string? AvatarUrl { get; set; }
+    public string? BannerUrl { get; set; }
     public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
 
     public List<Bookmark> Bookmarks { get; set; } = new();
