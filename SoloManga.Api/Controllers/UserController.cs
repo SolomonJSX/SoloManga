@@ -47,6 +47,22 @@ public class UserController(UserService userService, AppDbContext context, IWebH
     }
 
     
+    [Authorize]
+    [HttpPost("banner")]
+    public async Task<IActionResult> UploadBanner([FromForm] IFormFile file)
+    {
+        var userId = User.GetUserId();
+        var avatarUrl = await userService.ChangeBannerAsync(userId, file);
+        return Ok(new { avatarUrl });
+    }
+
+    [Authorize]
+    [HttpPut]
+    public async Task<IActionResult> UpdateUser([FromBody] UserEditDto user)
+    {
+        
+    }
+    
     [HttpGet("me")]
     public async Task<ActionResult<UserViewDto>> GetCurrentUser()
     {

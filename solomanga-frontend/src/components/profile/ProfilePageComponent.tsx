@@ -5,6 +5,7 @@ import {useUser} from "@/hooks/useUser";
 import ProfileSkeleton from "@/components/profile/ProfileSkeleton";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import AvatarUploader from "@/components/profile/AvatarUploader";
+import ProfileBanner from "@/components/profile/ProfileBanner";
 
 const ProfilePageComponent = () => {
     const { data: user, isLoading } = useUser()
@@ -14,12 +15,9 @@ const ProfilePageComponent = () => {
     return (
         <div className="min-h-screen">
             {/* БАННЕР */}
-            <div className="relative h-56 w-full bg-gradient-to-r from-indigo-500 to-purple-600">
-                {/* Аватар */}
-                <div className="absolute bottom-[-48px] left-6">
-                    <AvatarUploader />
-                </div>
-            </div>
+            <ProfileBanner bannerUrl={undefined}>
+                <AvatarUploader />
+            </ProfileBanner>
 
             {/* Контент */}
             <div className="mt-16 p-6 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">

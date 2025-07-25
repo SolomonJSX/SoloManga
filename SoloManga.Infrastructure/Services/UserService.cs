@@ -28,4 +28,24 @@ public class UserService(AppDbContext context, IWebHostEnvironment env, FileStor
         await context.SaveChangesAsync();
         return newAvatarUrl;
     }
+    
+    public async Task<string> ChangeBannerAsync(int userId, IFormFile file)
+    {
+        var user = await context.Users.FirstOrDefaultAsync(x => x.Id == userId);
+        
+        if (user == null)
+            throw new Exception("User not found");
+
+        if (!string.IsNullOrEmpty(user.BannerUrl))
+        {
+            var oldBannerPath = Path.Combine(env.ContentRootPath, user.BannerUrl.TrimStart('/'));
+            if (File.Exists(oldBannerPath))
+                File.Delete(oldBannerPath);
+        }
+
+        var newBannerUrl = await fileStorageService.UploadCoverAsync(file, "uploads/banners");
+        user.BannerUrl = newBannerUrl;
+        await context.SaveChangesAsync();
+        return newBannerUrl;
+    }
 }
