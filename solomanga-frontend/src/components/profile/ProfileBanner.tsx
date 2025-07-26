@@ -1,4 +1,5 @@
 import React from 'react';
+import {BASE_URL, USER_URL} from "@/repository/hosts";
 
 interface IProfileBannerProps {
     bannerUrl?: string;
@@ -10,9 +11,11 @@ const ProfileBanner = ({ bannerUrl, onBannerChange, children }: IProfileBannerPr
     return (
         <div className={"relative h-56 w-full group"}>
             <img
-                src={bannerUrl || "/no-image.png"}
+                src={bannerUrl
+                    ? `http://localhost:5190${bannerUrl}`
+                    : "/no-image.png"}
                 alt={"Banner"}
-                className={"w-full h-full object-contain rounded-b-md"}
+                className={"w-full h-full object-cover rounded-b-md"}
                 />
             <div className={"absolute bottom-[-48px] left-6"}>
                 {children}

@@ -8,3 +8,4 @@ export const AUTH_LOGIN_URL = `${AUTH_URL}/login`
 export const USER_URL = `${BASE_URL}/user`;
 export const USER_AVATAR_URL = `${USER_URL}/avatar`;
 export const CURRENT_USER_URL = `${USER_URL}/me`;
+export const USER_BANNER_URL = `${USER_URL}/banner`;

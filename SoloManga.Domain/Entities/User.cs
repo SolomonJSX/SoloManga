@@ -1,7 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore;
 
 namespace SoloManga.Domain.Entities;
 
+[Index(nameof(Username))]
+[Index(nameof(Email))]
 public class User
 {
     public int Id { get; set; }

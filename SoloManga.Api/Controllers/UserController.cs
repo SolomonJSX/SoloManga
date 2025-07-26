@@ -52,15 +52,26 @@ public class UserController(UserService userService, AppDbContext context, IWebH
     public async Task<IActionResult> UploadBanner([FromForm] IFormFile file)
     {
         var userId = User.GetUserId();
-        var avatarUrl = await userService.ChangeBannerAsync(userId, file);
-        return Ok(new { avatarUrl });
+        var bannerUrl = await userService.ChangeBannerAsync(userId, file);
+        return Ok(new { bannerUrl });
     }
 
     [Authorize]
     [HttpPut]
     public async Task<IActionResult> UpdateUser([FromBody] UserEditDto user)
     {
-        
+        try
+        {
+            int userId = User.GetUserId();
+            var userData = await userService.UpdateUserAsync(user,  userId);
+            await context.SaveChangesAsync();
+            return Ok(userData);
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
     
     [HttpGet("me")]
@@ -84,7 +95,9 @@ public class UserController(UserService userService, AppDbContext context, IWebH
                 AvatarUrl = currentUser.AvatarUrl,
                 RegistrationDate = currentUser.RegistrationDate,
                 Role = currentUser.Role,
-                Username = currentUser.Username
+                Username = currentUser.Username,
+                Bio = currentUser.Bio,
+                BannerUrl = currentUser.BannerUrl
             });
         }
         catch (Exception e)
@@ -92,5 +105,28 @@ public class UserController(UserService userService, AppDbContext context, IWebH
             Console.WriteLine(e);
             return BadRequest(e.Message);
         }
+    }
+    
+    [Authorize]
+    [HttpDelete("banner")]
+    public async Task<IActionResult> DeleteBanner()
+    {
+        var userId = User.GetUserId(); // реализуй получение userId
+        var user = await context.Users.FindAsync(userId);
+        if (user == null) return NotFound();
+
+        if (!string.IsNullOrEmpty(user.BannerUrl))
+        {
+            var filePath = Path.Combine(env.WebRootPath, user.BannerUrl.TrimStart('/'));
+            if (System.IO.File.Exists(filePath))
+            {
+                System.IO.File.Delete(filePath);
+            }
+
+            user.BannerUrl = null;
+            await context.SaveChangesAsync();
+        }
+
+        return NoContent();
     }
 }

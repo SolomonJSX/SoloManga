@@ -5,6 +5,8 @@ interface IUserViewDto {
     role: string;
     avatarUrl?: string;
     registrationDate: string;
+    bio?: string;
+    bannerUrl?: string;
 }
 
 export default IUserViewDto;

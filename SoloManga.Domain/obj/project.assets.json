@@ -1,26 +1,58 @@
 {
   "version": 3,
   "targets": {
-    "net9.0": {}
+    "net9.0": {
+      "Microsoft.EntityFrameworkCore.Abstractions/9.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Microsoft.EntityFrameworkCore.Abstractions/9.0.7": {
+      "sha512": "YUXNerEkCf4OANO+zjuMznpUW7R8XxSCqmBfYhBrbrJVc09i84KkNgeUTaOUXCGogSK/3d7ORRhMqfUobnejBg==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.abstractions/9.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "PACKAGE.md",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.dll",
+        "lib/net8.0/Microsoft.EntityFrameworkCore.Abstractions.xml",
+        "microsoft.entityframeworkcore.abstractions.9.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.abstractions.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net9.0": []
+    "net9.0": [
+      "Microsoft.EntityFrameworkCore.Abstractions >= 9.0.7"
+    ]
   },
   "packageFolders": {
-    "/home/janserik/.nuget/packages/": {}
+    "C:\\Users\\Janserik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj",
       "projectName": "SoloManga.Domain",
-      "projectPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/SoloManga.Domain.csproj",
-      "packagesPath": "/home/janserik/.nuget/packages/",
-      "outputPath": "/home/janserik/RiderProjects/SoloManga/SoloManga.Domain/obj/",
+      "projectPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\SoloManga.Domain.csproj",
+      "packagesPath": "C:\\Users\\Janserik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Janserik\\RiderProjects\\SoloManga\\SoloManga.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/janserik/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Janserik\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -44,11 +76,17 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net9.0": {
         "targetAlias": "net9.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Abstractions": {
+            "target": "Package",
+            "version": "[9.0.7, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -65,7 +103,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.106/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

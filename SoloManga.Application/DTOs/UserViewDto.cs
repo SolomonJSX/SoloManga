@@ -8,7 +8,9 @@ public class UserViewDto
     public string Username { get; set; } = "Чан";
     public string Email { get; set; } = null!;
     public string Role { get; set; } = "User";
+    public string? Bio { get; set; }
     public string? AvatarUrl { get; set; }
+    public string? BannerUrl { get; set; }
     public DateTime RegistrationDate { get; set; }
     public List<Bookmark> Bookmarks { get; set; }
     public List<UserRating> Ratings { get; set; }

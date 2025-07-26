@@ -48,4 +48,31 @@ public class UserService(AppDbContext context, IWebHostEnvironment env, FileStor
         await context.SaveChangesAsync();
         return newBannerUrl;
     }
+
+    public async Task<UserViewDto> UpdateUserAsync(UserEditDto dto, int userId)
+    {
+        var  user = await context.Users.FirstOrDefaultAsync(x => x.Id == userId);
+        
+        if (user == null)
+            throw new Exception("User not found");
+        
+        if (!string.IsNullOrWhiteSpace(dto.Username))
+            user.Username = dto.Username;
+        
+        user.Bio = dto.Bio;
+        
+        await context.SaveChangesAsync();
+
+        return new UserViewDto()
+        {
+            Id = user.Id,
+            Username = user.Username,
+            Bio = user.Bio,
+            AvatarUrl = user.AvatarUrl,
+            RegistrationDate = user.RegistrationDate,
+            Email = user.Email,
+            Role = user.Role,
+            BannerUrl = user.BannerUrl
+        };
+    }
 }

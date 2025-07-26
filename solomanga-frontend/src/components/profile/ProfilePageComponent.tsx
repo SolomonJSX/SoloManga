@@ -6,16 +6,21 @@ import ProfileSkeleton from "@/components/profile/ProfileSkeleton";
 import {Tabs, TabsContent, TabsList, TabsTrigger} from "@/components/ui/tabs";
 import AvatarUploader from "@/components/profile/AvatarUploader";
 import ProfileBanner from "@/components/profile/ProfileBanner";
+import useEditProfileModal from "@/hooks/useEditProfileModal";
 
 const ProfilePageComponent = () => {
     const { data: user, isLoading } = useUser()
 
+    const { open } = useEditProfileModal()
+
     if (isLoading || !user) return <ProfileSkeleton />
+
+    console.log(user)
 
     return (
         <div className="min-h-screen">
             {/* БАННЕР */}
-            <ProfileBanner bannerUrl={undefined}>
+            <ProfileBanner bannerUrl={user.bannerUrl}>
                 <AvatarUploader />
             </ProfileBanner>
 
@@ -28,8 +33,15 @@ const ProfilePageComponent = () => {
                     <p className="text-sm text-muted-foreground">
                         Дата регистрации: {new Date(user.registrationDate).toLocaleDateString()}
                     </p>
+                    {/* Био */}
+                    <div>
+                        <p className="text-sm font-medium">О себе:</p>
+                        <p className="text-sm text-muted-foreground whitespace-pre-line">
+                            {user.bio?.trim() || "Пользователь пока ничего не рассказал о себе."}
+                        </p>
+                    </div>
                     {/* Редактировать профиль */}
-                    <button className="px-4 py-2 bg-zinc-700 text-white rounded hover:bg-zinc-600">
+                    <button onClick={open} className="cursor-pointer px-4 py-2 bg-zinc-700 text-white rounded hover:bg-zinc-600">
                         Редактировать профиль
                     </button>
                 </div>
