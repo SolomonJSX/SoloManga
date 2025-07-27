@@ -3,6 +3,8 @@ bin/
 obj/
 *.user
 *.suo
+wwwroot/
+
 
 # Node.js
 node_modules/
