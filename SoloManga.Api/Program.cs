@@ -36,6 +36,7 @@ builder.Services.AddScoped<IMangaService, MangaService>();
 builder.Services.AddScoped<FileStorageService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<UserService>();
+builder.Services.AddScoped<IChapterService, ChapterService>();
 
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>

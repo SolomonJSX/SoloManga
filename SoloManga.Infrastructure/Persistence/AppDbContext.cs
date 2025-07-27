@@ -13,6 +13,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<MangaGenre> MangaGenres => Set<MangaGenre>();
     public DbSet<Page> Pages => Set<Page>();
     public DbSet<Bookmark> Bookmarks => Set<Bookmark>();
+    
+    public DbSet<Chapter> Chapters => Set<Chapter>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

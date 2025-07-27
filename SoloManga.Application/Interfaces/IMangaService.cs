@@ -6,19 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SoloManga.Application.DTOs;
+using SoloManga.Application.DTOs.MangaDtos;
 
 namespace SoloManga.Application.Interfaces
 {
     public interface IMangaService
     {
-        Task<List<MangaViewDto>> GetAllMangasAsync();
-        Task<MangaViewDto> GetMangaByIdAsync(int id);
-        Task<List<MangaViewDto>> SearchMangasAsync(string query);
-        Task<List<MangaViewDto>> GetMangasByAuthorAsync(string author);
-        Task<List<MangaViewDto>> GetMangasByArtistAsync(string artist);
-        Task<List<MangaViewDto>> GetMangasByStatusAsync(MangaStatus status);
-        Task AddMangaAsync(MangaViewDto manga);
-        Task UpdateMangaAsync(MangaViewDto manga);
-        Task DeleteMangaAsync(int id);
+        Task<Manga> CreateMangaAsync(MangaCreateDto dto);
     }
 }

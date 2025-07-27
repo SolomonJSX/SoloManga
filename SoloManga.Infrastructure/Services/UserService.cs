@@ -23,7 +23,7 @@ public class UserService(AppDbContext context, IWebHostEnvironment env, FileStor
                 File.Delete(oldAvatarPath);
         }
 
-        var newAvatarUrl = await fileStorageService.UploadCoverAsync(file, "uploads/avatars");
+        var newAvatarUrl = await fileStorageService.UploadFilesAsync(file, "uploads/avatars");
         user.AvatarUrl = newAvatarUrl;
         await context.SaveChangesAsync();
         return newAvatarUrl;
@@ -43,7 +43,7 @@ public class UserService(AppDbContext context, IWebHostEnvironment env, FileStor
                 File.Delete(oldBannerPath);
         }
 
-        var newBannerUrl = await fileStorageService.UploadCoverAsync(file, "uploads/banners");
+        var newBannerUrl = await fileStorageService.UploadFilesAsync(file, "uploads/banners");
         user.BannerUrl = newBannerUrl;
         await context.SaveChangesAsync();
         return newBannerUrl;
