@@ -2,7 +2,7 @@ interface IUserViewDto {
     id: number;
     username: string;
     email: string;
-    role: string;
+    role: "Admin" | "User";
     avatarUrl?: string;
     registrationDate: string;
     bio?: string;

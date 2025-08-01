@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SoloManga.Api.Requests;
 using SoloManga.Application.DTOs.MangaDtos;
 using SoloManga.Application.Interfaces;
@@ -12,6 +13,7 @@ namespace SoloManga.Api.Controllers;
 public class MangaController(IMangaService mangaService, FileStorageService fileStorage) : ControllerBase
 {
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateManga(MangaCreateRequest mangaRequest)
     {
         string? imageUrl = null;

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SoloManga.Application.DTOs.MangaDtos;
 using SoloManga.Application.Interfaces;
 using SoloManga.Domain.Entities;
@@ -10,6 +11,7 @@ namespace SoloManga.Api.Controllers;
 public class ChapterController(IChapterService chapterService) : ControllerBase
 {
     [HttpPost]
+    [Authorize(Roles = "Admin")]
     public async Task<IActionResult> CreateChapter([FromBody] ChapterCreateDto chapterDto)
     {
         var chapter = await chapterService.CreateChapterAsync(chapterDto);
